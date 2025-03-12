@@ -88,6 +88,16 @@ public class Main {
         }
     }
 
+    public static void searchItemPrice(){
+        System.out.println();
+        System.out.print("Enter item name: ");
+        String itemName = scanner.nextLine();
+        if (inventory.containsKey(itemName)) {
+            System.out.println("Price of " + itemName + " is " + inventory.get(itemName).price);
+        } else {
+            System.out.println("Item does not exist in inventory.");
+        }
+    }
     public static void main(String[] args) {
         
 while (true){
@@ -96,8 +106,9 @@ while (true){
         System.out.println("2. Remove item from inventory");
         System.out.println("3. Update item quantity");
         System.out.println("4. View inventory");
-        System.out.println("5. Search item price");
-        System.out.println("6. Exit"); 
+        System.out.println("5. Update item price");
+        System.out.println("6. Search item price");
+        System.out.println("7. Exit"); 
         System.out.print("Choose an option: ");
         int option = Integer.parseInt(scanner.nextLine());
 
@@ -136,6 +147,11 @@ while (true){
                     break;
 
                 case 6:
+                    searchItemPrice();
+                    System.out.println();
+                    break;
+
+                case 7:
                     System.out.println("Exiting program...");
                     System.exit(0);
                     break;
